@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author simonegalota
- *
- */
-module BankingApplication {
-}
