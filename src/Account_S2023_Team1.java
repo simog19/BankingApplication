@@ -1,6 +1,6 @@
 
 //abstract class cannot be instantiated, but they can be subclassed
-public abstract class Account_S2023_Group1 {
+public abstract class Account_S2023_Team1 {
 	private String name;
 	private String surname;
 	private String birthDate;
@@ -16,7 +16,7 @@ public abstract class Account_S2023_Group1 {
 	
 	
 
-	public Account_S2023_Group1(String name, String surname, String birth_date, String ssn, String address, String city, long zip_code, String account_number, String routing_number, double balance) {
+	protected Account_S2023_Team1(String name, String surname, String birth_date, String ssn, String address, String city, long zip_code, String account_number, String routing_number, double balance) {
 		this.name = name;
 		this.surname = surname;
 		birthDate = birth_date;
