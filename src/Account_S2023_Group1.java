@@ -1,62 +1,74 @@
-import java.util.Date;
 
+//abstract class cannot be instantiated, but they can be subclassed
 public abstract class Account_S2023_Group1 {
-	private String Name;
-	private String Surname;
-	private String Birth_date;
+	private String name;
+	private String surname;
+	private String birthDate;
 	private String SSN;
-	private String Address;
-	private String City;
-	private long Zip_code;
-	private String Account_number;
-	private String Routing_number;
+	private String address;
+	private String city;
+	private long zipCode;
+	private String accountNumber;
+	private String routingNumber;
 	private double Balance;
+	public String Type;
 	private java.util.Date dateCreated;
 	
 	
 
-	public Account_S2023_Group1(String name, String surname, String birth_date, String ssn, String address, String city,
-			long zip_code, String account_number, String routing_number, double balance, Date dateCreated) {
-		super();
-		Name = name;
-		Surname = surname;
-		Birth_date = birth_date;
+	public Account_S2023_Group1(String name, String surname, String birth_date, String ssn, String address, String city, long zip_code, String account_number, String routing_number, double balance) {
+		this.name = name;
+		this.surname = surname;
+		birthDate = birth_date;
 		SSN = ssn;
-		Address = address;
-		City = city;
-		Zip_code = zip_code;
-		Account_number = account_number;
-		Routing_number = routing_number;
-		Balance = balance;
-		this.dateCreated = dateCreated;
+		this.address = address;
+		this.city = city;
+		zipCode = zip_code;
+		accountNumber = account_number;
+		routingNumber = routing_number;
+		Balance = 0.0;
+		dateCreated = new java.util.Date();
 	}
 	
-	public abstract void charge_fee(double fee);
-	public abstract void deposit(double amount);
+	@Override
+	public String toString() {
+		return "Account_S2023_Group1 [Name:" + name + ", Surname:" + surname + ", Birth_date:" + birthDate + ", SSN:"
+				+ SSN + ", Address:" + address + ", City:" + city + ", Zip_code:" + zipCode + ", Account_number:"
+				+ accountNumber + ", Routing_number:" + routingNumber + ", Balance:" + Balance + ", dateCreated:"
+				+ dateCreated + "]";
+	}
+
+	public void chargeFee(double fee) {
+		this.setBalance(this.getBalance()-fee);
+	}
 	
 
+	public void deposit(double amount) {
+		this.setBalance(this.getBalance()+amount);
+	}
+
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public String getSurname() {
-		return Surname;
+		return surname;
 	}
 
 	public void setSurname(String surname) {
-		Surname = surname;
+		this.surname = surname;
 	}
 
 	public String getBirth_date() {
-		return Birth_date;
+		return birthDate;
 	}
 
 	public void setBirth_date(String birth_date) {
-		Birth_date = birth_date;
+		birthDate = birth_date;
 	}
 
 	public String getSSN() {
@@ -68,43 +80,43 @@ public abstract class Account_S2023_Group1 {
 	}
 
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 
 	public String getCity() {
-		return City;
+		return city;
 	}
 
 	public void setCity(String city) {
-		City = city;
+		this.city = city;
 	}
 
 	public long getZip_code() {
-		return Zip_code;
+		return zipCode;
 	}
 
 	public void setZip_code(long zip_code) {
-		Zip_code = zip_code;
+		zipCode = zip_code;
 	}
 
 	public String getAccount_number() {
-		return Account_number;
+		return accountNumber;
 	}
 
 	public void setAccount_number(String account_number) {
-		Account_number = account_number;
+		accountNumber = account_number;
 	}
 
 	public String getRouting_number() {
-		return Routing_number;
+		return routingNumber;
 	}
 
 	public void setRouting_number(String routing_number) {
-		Routing_number = routing_number;
+		routingNumber = routing_number;
 	}
 
 	public double getBalance() {
