@@ -23,7 +23,6 @@ public class Person {
 		this.dateCreated = new java.util.Date();
 	}
 
-	
 	public String getBirthDate() {
 		return birthDate;
 	}
