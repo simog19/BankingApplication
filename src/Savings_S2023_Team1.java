@@ -2,8 +2,8 @@ public class Savings_S2023_Team1 extends Account_S2023_Team1 {
 	private String type;
 	
 	
-	public Savings_S2023_Team1(String account_number, String routing_number) {
-		super(account_number, routing_number);
+	public Savings_S2023_Team1(int owner_ID, int account_number, String routing_number) {
+		super(owner_ID,account_number, routing_number);
 		setType();
 	}
 

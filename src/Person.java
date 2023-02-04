@@ -6,24 +6,31 @@ public class Person {
 	private String birthDate;
 	private String SSN;
 	private String city;
-	private String accountNumber;
+	private int ownerID;
 	private java.util.Date dateCreated;
 	
 	protected Person() {
 
 	}
 	
-	protected Person(String name, String surname, String birthDate, String ssn, String city, String accountNumber) {
+	protected Person(String name, String surname, String birthDate, String ssn, String city, int owner_id) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;
 		this.SSN = ssn;
 		this.city = city;
-		this.accountNumber = accountNumber;
+		this.ownerID = owner_id;
 		this.dateCreated = new java.util.Date();
 	}
 
 	
+	public String getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
 	
 	public String getName() {
 		return name;
@@ -82,13 +89,7 @@ public class Person {
 		zipCode = zip_code;
 	}
 */
-	public String getAccount_number() {
-		return accountNumber;
-	}
 
-	public void setAccount_number(String account_number) {
-		accountNumber = account_number;
-	}
 	
 	public java.util.Date getDateCreated() {
 		return dateCreated;
@@ -100,8 +101,16 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return "Account Holder [Account N.="+ accountNumber + " - name=" + name + ", surname=" + surname + ", birthDate=" + birthDate + ", SSN=" + SSN
-				+ ", city=" + city + ", dateCreated=" + dateCreated + "]";
+		return "Account Holder [Account_id="+ ownerID + " - name=" + name + ", surname=" + surname + ", birthDate=" + birthDate + ", SSN=" + SSN
+				+ ", city=" + city + ", WithUsSince=" + dateCreated + "]";
+	}
+
+	public int getOwnerID() {
+		return ownerID;
+	}
+
+	public void setOwnerID(int ownerID) {
+		this.ownerID = ownerID;
 	}
 
 }

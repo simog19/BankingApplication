@@ -1,17 +1,39 @@
 
 //abstract class cannot be instantiated, but they can be subclassed
 public abstract class Account_S2023_Team1 {
-	private String accountNumber;
+	private int ownerID;
+	private int accountNumber;
 	private String routingNumber;
 	private double Balance;
 	
 
-	protected Account_S2023_Team1(String account_number, String routing_number) {
-		setAccountNumber(account_number);
+	protected Account_S2023_Team1(int owner_id,int account_number, String routing_number) {
+		ownerID=owner_id;
+		accountNumber=account_number;
 		routingNumber = routing_number;
 		Balance = 0.0;
 	}
 	
+
+	public int getOwnerID() {
+		return ownerID;
+	}
+
+
+	public void setOwnerID(int ownerID) {
+		this.ownerID = ownerID;
+	}
+
+
+	public String getRoutingNumber() {
+		return routingNumber;
+	}
+
+
+	public void setRoutingNumber(String routingNumber) {
+		this.routingNumber = routingNumber;
+	}
+
 
 	//
 	public void chargeFee(double fee) {
@@ -43,12 +65,12 @@ public abstract class Account_S2023_Team1 {
 	}
 
 
-	public String getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
 
-	public void setAccountNumber(String accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 

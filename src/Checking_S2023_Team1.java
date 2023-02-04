@@ -2,8 +2,8 @@ public class Checking_S2023_Team1 extends Account_S2023_Team1{
 	private String type;
 	
 	
-	public Checking_S2023_Team1(String account_number, String routing_number) {
-		super(account_number, routing_number);
+	public Checking_S2023_Team1(int ownerID, int account_number, String routing_number) {
+		super(ownerID, account_number, routing_number);
 		setType();
 	}
 
@@ -24,7 +24,7 @@ public class Checking_S2023_Team1 extends Account_S2023_Team1{
 	
 	@Override
 	public String toString() {
-		return "[Account_ID=" + getAccountNumber() +"type=" + type + ", getRouting_number()=" + getRouting_number() + ", getBalance()="
+		return "[OwnerID="+getOwnerID()+"Account_ID=" + getAccountNumber() +"type=" + type + ", getRouting_number()=" + getRouting_number() + ", getBalance()="
 				+ getBalance()+"]";
 	}
 
