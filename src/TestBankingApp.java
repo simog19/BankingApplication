@@ -21,9 +21,11 @@ public class TestBankingApp {
 		//creating an instance of Saving Account
 		System.out.println("Creating Account2...");
 		Account_S2023_Team1 account2= new Savings_S2023_Team1(p3.getOwnerID(),00002,"45678901");
-		Account_S2023_Team1 account3= new Savings_S2023_Team1(p1.getOwnerID(),00003,"45688999");
-		
 		System.out.println("2 Accounts created");
+		
+		System.out.println("Creating Account3...");
+		Account_S2023_Team1 account3= new Savings_S2023_Team1(p1.getOwnerID(),00003,"45688999");
+		System.out.println("3 Accounts created");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("--------------------------------------------------------------------------------------");
