@@ -48,7 +48,7 @@ public abstract class Account_S2023_Team1 {
 	}
 	
 	//method to withdraw to override
-	public abstract void withdraw(double amount); 
+	public abstract void withdraw(double amount);
 
 	public int getOwnerID() {
 		return ownerID;
@@ -60,16 +60,14 @@ public abstract class Account_S2023_Team1 {
 	}
 
 
-	public String getRoutingNumber() {
+	
+	public String getRouting_number() {
 		return routingNumber;
 	}
 
-
-	public void setRoutingNumber(String routingNumber) {
-		this.routingNumber = routingNumber;
+	public void setRouting_number(String routing_number) {
+		routingNumber = routing_number;
 	}
-
-
 
 	public double getBalance() {
 		return Balance;
