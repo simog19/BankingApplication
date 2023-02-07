@@ -12,7 +12,7 @@ public class Person {
 	protected Person() {
 
 	}
-	
+	//modifications
 	protected Person(String name, String surname, String birthDate, String ssn, String city, int owner_id) {
 		this.name = name;
 		this.surname = surname;
