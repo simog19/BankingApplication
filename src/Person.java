@@ -1,5 +1,7 @@
 import java.util.Date;
 
+
+//this class contains all the personal information of a person, it is a sort of database template
 public class Person {
 	private String name;
 	private String surname;
@@ -12,7 +14,8 @@ public class Person {
 	protected Person() {
 
 	}
-	//modifications
+	
+	
 	protected Person(String name, String surname, String birthDate, String ssn, String city, int owner_id) {
 		this.name = name;
 		this.surname = surname;

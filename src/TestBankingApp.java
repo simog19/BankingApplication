@@ -8,7 +8,7 @@ public class TestBankingApp {
 		System.out.println("Creating Database...");
 		Person p1 = new Person("Simon", "Beng", "02/19/1997","1234567","NewYork",0001);
 		Person p2 = new Person("Jeff", "Bezos", "04/09/1980","3344556","NewYork",0002);
-		Person p3 = new Person("Simon", "Garlic", "03/22/1995","7432154","NewYork",0003);
+		Person p3 = new Person("Simon", "Garl", "03/22/1995","7432154","NewYork",0003);
 		System.out.println("...Database created");
 		
 		
