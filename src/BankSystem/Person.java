@@ -1,3 +1,4 @@
+package BankSystem;
 import java.util.Date;
 
 
@@ -11,12 +12,12 @@ public class Person {
 	private int ownerID;
 	private java.util.Date dateCreated;
 	
-	protected Person() {
+	public Person() {
 
 	}
 	
 	
-	protected Person(String name, String surname, String birthDate, String ssn, String city, int owner_id) {
+	public Person(String name, String surname, String birthDate, String ssn, String city, int owner_id) {
 		this.name = name;
 		this.surname = surname;
 		this.birthDate = birthDate;

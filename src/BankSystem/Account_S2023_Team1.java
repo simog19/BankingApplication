@@ -1,3 +1,4 @@
+package BankSystem;
 
 //abstract class cannot be instantiated, but they can be subclassed
 public abstract class Account_S2023_Team1 {
@@ -6,15 +7,15 @@ public abstract class Account_S2023_Team1 {
 	private String routingNumber;
 	private double Balance;
 	
-	protected  Account_S2023_Team1() {
+	public  Account_S2023_Team1() {
 
 	}
 
-	protected Account_S2023_Team1(int owner_id,int account_number, String routing_number) {
+	public Account_S2023_Team1(int owner_id,int account_number, String routing_number) {
 		ownerID = owner_id;
 		accountNumber = account_number;
 		routingNumber = routing_number;
-		Balance = 0.0;
+		Balance = 0.00;
 	}
 	
 	
@@ -24,7 +25,7 @@ public abstract class Account_S2023_Team1 {
 		
 		this.setBalance(this.getBalance()-fee);
 		
-		System.out.println("Fee Charged: $"+ fee + " - New balance: $"+ this.getBalance());
+		System.out.println("Fee Charged: $" + fee + " - New balance: $"+ this.getBalance());
 		
 		if (this.getBalance() < 0.0 ) {
 			System.out.println("!!!! Account with insufficent funds !!!!");

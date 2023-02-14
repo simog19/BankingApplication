@@ -1,3 +1,4 @@
+package BankSystem;
 
 public class TestBankingApp {
 	public static void main(String[] args) {
@@ -50,11 +51,11 @@ public class TestBankingApp {
 		
 		
 			//charging fee
-		account1.chargeFee(10.0);
+		account1.chargeFee(10.54);
 		System.out.println("");
-		account2.chargeFee(20.0);
+		account2.chargeFee(23.44);
 		System.out.println("");
-		account3.chargeFee(20.0);
+		account3.chargeFee(2.50);
 		System.out.println("");
 		
 		System.out.println("");
