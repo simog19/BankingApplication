@@ -1,6 +1,9 @@
 package junit;
 
 import BankSystem.*;
+import Exceptions.InsufficientFundsException;
+import Exceptions.InvalidDepositAmountException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.Assert;
@@ -34,11 +37,12 @@ public class AccountBankingTest {
 	}
 	
 	@Test
-	public void testDeposit() {
+	public void testDeposit() throws InvalidDepositAmountException {
 		Person p1 = new Person("Simon", "Beng", "02/19/1997","1234567","NewYork",0001);
 		Account_S2023_Team1 account1= new Checking_S2023_Team1(p1.getOwnerID(), 00001,"12345678");
 		
-		account1.deposit(10.0);
+			account1.deposit(10.0);
+		
 		
 		assertEquals(10.0,account1.getBalance());
 		
@@ -62,7 +66,7 @@ public class AccountBankingTest {
 	}*/
 	
 	@Test
-	public void testChargeFee() {
+	public void testChargeFee() throws InvalidDepositAmountException {
 		Person p1 = new Person("Simon", "Beng", "02/19/1997","1234567","NewYork",0001);
 		Account_S2023_Team1 account1= new Checking_S2023_Team1(p1.getOwnerID(), 00001,"12345678");
 		
@@ -82,7 +86,7 @@ public class AccountBankingTest {
 	
 	
 	@Test
-	public void testWithdrawal() {
+	public void testWithdrawal() throws InvalidDepositAmountException, InsufficientFundsException {
 		Person p1 = new Person("Simon", "Beng", "02/19/1997","1234567","NewYork",0001);
 		Account_S2023_Team1 account1= new Checking_S2023_Team1(p1.getOwnerID(), 00001,"12345678");
 		

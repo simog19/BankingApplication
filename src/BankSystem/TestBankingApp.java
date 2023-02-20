@@ -1,5 +1,8 @@
 package BankSystem;
 
+import Exceptions.InsufficientFundsException;
+import Exceptions.InvalidDepositAmountException;
+
 public class TestBankingApp {
 	public static void main(String[] args) {
 		
@@ -29,23 +32,30 @@ public class TestBankingApp {
 		System.out.println("3 Accounts created");
 		System.out.println("");
 		System.out.println("");
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println("---------------------------------**DEPOSIT TEST**-----------------------------------------------");
 		System.out.println("");
 		System.out.println("");
 		
-		//operation on the accounts
+		//******** TEST: operation on the accounts
 		
-			//deposit
-		account1.deposit(50.0);
-		System.out.println("");
-		account2.deposit(10000.0);
-		System.out.println("");
-		account3.deposit(100.0);
-		System.out.println("");
+			//deposit 
+		try {
+			account1.deposit(50.0);
+			System.out.println("");
+			account2.deposit(10000.0);
+			System.out.println("");
+			account3.deposit(100.0);
+			System.out.println("");
+			account3.deposit(-1.0);
+			System.out.println("");
+			
+		} catch (InvalidDepositAmountException ex) {
+			System.out.println(ex);
+		}
 		
 
 		System.out.println("");
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println("--------------------------------**CHARGING FEE TEST**----------------------------------------------");
 		System.out.println("");
 
 		
@@ -59,20 +69,28 @@ public class TestBankingApp {
 		System.out.println("");
 		
 		System.out.println("");
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println("----------------------------------**WITHDRAW TEST**----------------------------------------------");
 		System.out.println("");
 
 		
 			//withdrawal
-		account1.withdraw(30);
-		System.out.println("");
-		account1.withdraw(15);
-		System.out.println("");
-		account1.chargeFee(15);
-		System.out.println("");
-		account1.withdraw(20);
-		System.out.println("");
-		account2.withdraw(20);
+		try {
+			account1.withdraw(30);
+			System.out.println("");
+			account1.withdraw(15);
+			System.out.println("");
+			account1.chargeFee(15);
+			System.out.println("");
+			account1.withdraw(20);
+			System.out.println("");
+			account2.withdraw(20);
+			
+		}
+		catch (InsufficientFundsException ex) {
+			System.out.println(ex);
+		}
+		
+		
 		
 		
 		

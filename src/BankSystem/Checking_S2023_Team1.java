@@ -1,4 +1,7 @@
 package BankSystem;
+import Exceptions.InsufficientFundsException;
+
+
 public class Checking_S2023_Team1 extends Account_S2023_Team1{
 	private String type;
 	
@@ -13,22 +16,27 @@ public class Checking_S2023_Team1 extends Account_S2023_Team1{
 
 	//do checks on money availability and printing status of operation
 	@Override
-	public void withdraw(double amount) {
+	public void withdraw(double amount) throws InsufficientFundsException {
 		
-		System.out.println("Account n."+this.getAccountNumber()+" - Withdraw ongoing... Current balance: $"+ this.getBalance());
-		if ( this.getBalance()<= 0.0) {
-			System.out.println("!!!! Insufficent Funds !!!! You cannot withdraw any amount of money.");
-		}
-		else if ((this.getBalance()-amount)<0.0) {
-			System.out.println("!!!! Insufficent Funds !!!! You can withdraw at most: $" + this.getBalance());
-		}
-		else {
+		System.out.println("Account n."+this.getAccountNumber()+" - Withdraw ongoing... Current balance: $"+ this.getBalance() + " - Amount to wihtdraw: $"+amount);
 		
-			this.setBalance(this.getBalance()-amount);
-		
-			System.out.println("Withdraw of $"+amount+" executed. New Balance: $" + this.getBalance());
+			
+			if ( this.getBalance()<= 0.0) {
+				System.out.println("!!!! Insufficent Funds !!!! You cannot withdraw any amount of money.");
+				throw new InsufficientFundsException(amount);
+			}
+			else if ((this.getBalance()-amount)<0.0) {
+				System.out.println("!!!! Insufficent Funds !!!! You can withdraw at most: $" + this.getBalance());
+				throw new InsufficientFundsException(amount);
+			}
+			else {
+			
+				this.setBalance(this.getBalance()-amount);
+			
+				System.out.println("Withdraw of $"+amount+" executed. New Balance: $" + this.getBalance());
+			}
+			
 		}
-	}
 
 
 	public String getType() {

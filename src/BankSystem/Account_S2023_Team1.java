@@ -1,5 +1,8 @@
 package BankSystem;
 
+import Exceptions.InsufficientFundsException;
+import Exceptions.InvalidDepositAmountException;
+
 //abstract class cannot be instantiated, but they can be subclassed
 public abstract class Account_S2023_Team1 {
 	private int ownerID;
@@ -34,22 +37,32 @@ public abstract class Account_S2023_Team1 {
 	
 
 	//method to deposit money
-	public void deposit(double amount) {
-		System.out.println("Account n."+this.getAccountNumber()+" - Deposit ongoing... Current balance: $"+ this.getBalance() + " - Amount to deposit: $"+amount);
+	public void deposit(double amount) throws InvalidDepositAmountException{
 		
-		this.setBalance(this.getBalance()+amount);
-		
-		System.out.println("Deposit done! New balance: $"+ this.getBalance());
-		
-		if (this.getBalance() < 0.0 ) {
-			System.out.println("!!!! Account still with insufficent funds !!!!");
-		}
+		if (amount>0) {
+			System.out.println("Account n."+this.getAccountNumber()+" - Deposit ongoing... Current balance: $"+ this.getBalance() + " - Amount to deposit: $"+amount);
 			
+			this.setBalance(this.getBalance()+amount);
+			
+			System.out.println("Deposit done! New balance: $"+ this.getBalance());
+			
+			if (this.getBalance() < 0.0 ) {
+				System.out.println("!!!! Account still with insufficent funds !!!!");
+			}
+				
+			
+		}
+		else {
+			throw new InvalidDepositAmountException(amount);
+		}
+		
+		
+		
 		
 	}
 	
 	//method to withdraw to override
-	public abstract void withdraw(double amount);
+	public abstract void withdraw(double amount) throws InsufficientFundsException;
 
 	public int getOwnerID() {
 		return ownerID;
