@@ -1,5 +1,6 @@
 package exceptions;
 
+
 public class InsufficientFundsException extends Exception {
 	private double balance;
 

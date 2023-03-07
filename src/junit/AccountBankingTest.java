@@ -6,6 +6,8 @@ import exceptions.InvalidDepositAmountException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.security.InvalidAlgorithmParameterException;
+
 import org.junit.jupiter.api.Test;
 
 public class AccountBankingTest {
@@ -63,14 +65,24 @@ public class AccountBankingTest {
 		AccountS2023Team1 account1 = new CheckingS2023Team1(p1.getOwnerID(), 00001, "12345678");
 
 		account1.deposit(10.00);
-		account1.chargeFee(6.00);
+		try {
+			account1.chargeFee(6.00);
+		} catch (InvalidAlgorithmParameterException e) {
+			// TODO Auto-generated catch block
+	
+		}
 
 		assertEquals(4.0, account1.getBalance());
 
 		Person p2 = new Person("Jeff", "Bezos", "04/09/1980", "3344556", "NewYork", 0002);
 		AccountS2023Team1 account2 = new SavingsS2023Team1(p2.getOwnerID(), 00002, "45678901");
 
-		account2.chargeFee(1.0);
+		try {
+			account2.chargeFee(1.0);
+		} catch (InvalidAlgorithmParameterException e) {
+			// TODO Auto-generated catch block
+	
+		}
 		assertEquals(-1.0, account2.getBalance());
 	}
 
@@ -80,7 +92,15 @@ public class AccountBankingTest {
 		AccountS2023Team1 account1 = new CheckingS2023Team1(p1.getOwnerID(), 00001, "12345678");
 
 		account1.deposit(100.0);
-		account1.withdraw(50.0);
+		try {
+			account1.withdraw(50.0);
+		} catch (InvalidAlgorithmParameterException e) {
+			// TODO Auto-generated catch block
+		
+		} catch (InsufficientFundsException e) {
+			// TODO Auto-generated catch block
+		
+		}
 
 		assertEquals(50.0, account1.getBalance());
 
@@ -88,7 +108,12 @@ public class AccountBankingTest {
 		AccountS2023Team1 account2 = new SavingsS2023Team1(p2.getOwnerID(), 00002, "45678901");
 
 		account2.deposit(15.0);
-		account2.withdraw(50.0);
+		try {
+			account2.withdraw(50.0);
+		} catch (InvalidAlgorithmParameterException | InsufficientFundsException e) {
+			// TODO Auto-generated catch block
+
+		}
 
 		assertEquals(15.0, account2.getBalance());
 

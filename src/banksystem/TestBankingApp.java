@@ -1,10 +1,35 @@
 package banksystem;
 
+import java.security.InvalidAlgorithmParameterException;
+
 import exceptions.InsufficientFundsException;
 import exceptions.InvalidDepositAmountException;
 
+
+
+/**
+ * 
+ * The BankingApp program implements an application for supporting banking system in its procedure.
+ * 
+ * @author Matthew Steckman, Simone Galota, Timothy Barefield, 
+ * @version 1.0
+ * @since 2023-02-01
+ * 
+ * */
 public class TestBankingApp {
-	public static void main(String[] args) {
+	
+	
+	/**
+	 * 
+	 * This is the main method in which we create a demo customers database and make use of deposit, chargingfee, withdraw methods.
+	 * 
+	 * @author Matthew Steckman, Simone Galota, Timothy Barefield, 
+	 * @version 1.0
+	 * @throws InvalidAlgorithmParameterException 
+	 * @since 2023-02-01
+	 * 
+	 * */
+	public static void main(String[] args) throws InvalidAlgorithmParameterException {
 
 		// Creating three Account Holders: Name, Surname, Birth_date, SSN, City,
 		// account number temporarily assigned by hand

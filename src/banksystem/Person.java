@@ -2,7 +2,17 @@ package banksystem;
 
 // import java.util.Date;
 
-//this class contains all the personal information of a person, it is a sort of database template
+/**
+ * 
+ * Defines a customer and all its bio details.
+ * 
+ * 
+ * @author Matthew Steckman, Simone Galota, Timothy Barefield, 
+ * @version 1.0
+ * @since 2023-02-01
+ * 
+ * 
+ * */
 public class Person {
 	private String name;
 	private String surname;
@@ -12,9 +22,19 @@ public class Person {
 	private int ownerID;
 	private java.util.Date dateCreated;
 
+	
+	/**
+	 * Default constructor
+	 * 
+	 * */
 	public Person() {
 
 	}
+	
+	/**
+	 * Another constructor for class Person
+	 * 
+	 * */
 
 	public Person(String name, String surname, String birthDate, String ssn, String city, int ownerId) {
 		this.name = name;
@@ -66,11 +86,7 @@ public class Person {
 		this.ssn = ssn;
 	}
 
-	/*
-	 * public String getAddress() { return address; }
-	 * 
-	 * public void setAddress(String address) { this.address = address; }
-	 */
+
 	public String getCity() {
 		return city;
 	}
@@ -79,11 +95,6 @@ public class Person {
 		this.city = city;
 	}
 
-	/*
-	 * public long getZip_code() { return zipCode; }
-	 * 
-	 * public void setZip_code(int zip_code) { zipCode = zip_code; }
-	 */
 
 	public java.util.Date getDateCreated() {
 		return dateCreated;

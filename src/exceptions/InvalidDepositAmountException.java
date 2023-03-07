@@ -1,5 +1,6 @@
 package exceptions;
 
+
 public class InvalidDepositAmountException extends Exception {
 	private double amount;
 

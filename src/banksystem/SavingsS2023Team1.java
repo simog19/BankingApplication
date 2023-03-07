@@ -1,5 +1,11 @@
 package banksystem;
 
+import exceptions.InsufficientFundsException;
+
+/**
+ * Default constructor
+ * 
+ * */
 public class SavingsS2023Team1 extends AccountS2023Team1 {
 	private String type;
 
@@ -7,6 +13,13 @@ public class SavingsS2023Team1 extends AccountS2023Team1 {
 
 	}
 
+	/**
+	 * 
+	 * Another Constructor method for SavingsS2023Team1 class
+	 * 
+	 * 
+	 * 
+	 * */
 	public SavingsS2023Team1(int ownerId, int accountNumber, String routingNumber) {
 		super(ownerId, accountNumber, routingNumber);
 		setType();
@@ -26,6 +39,11 @@ public class SavingsS2023Team1 extends AccountS2023Team1 {
 				+ ", getRouting_number()=" + getRouting_number() + ", getBalance()=" + getBalance() + "]";
 	}
 
+	/** 
+	 * This method implements withdraw operation for savings account.
+	 * 
+	 * 
+	 * */
 	@Override
 	public void withdraw(double amount) {
 		System.out.println(
