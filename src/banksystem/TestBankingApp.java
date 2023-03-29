@@ -2,6 +2,8 @@ package banksystem;
 
 import java.security.InvalidAlgorithmParameterException;
 
+import org.apache.logging.log4j.*;
+
 import exceptions.InsufficientFundsException;
 import exceptions.InvalidDepositAmountException;
 
@@ -17,6 +19,8 @@ import exceptions.InvalidDepositAmountException;
  * 
  * */
 public class TestBankingApp {
+	
+	private static Logger logger = LogManager.getLogger(TestBankingApp.class.getName());
 	
 	
 	/**
@@ -39,22 +43,30 @@ public class TestBankingApp {
 		Person p2 = new Person("Jeff", "Bezos", "04/09/1980", "3344556", "NewYork", 0002);
 		Person p3 = new Person("Simon", "Garl", "03/22/1995", "7432154", "NewYork", 0003);
 		System.out.println("...Database created");
+		
+		logger.info("Database created successfully");
 
 		// routing number temporarily assigned by hand
 		// creating an instance of Checking Account
 		System.out.println("Creating Account1...");
 		AccountS2023Team1 account1 = new CheckingS2023Team1(p2.getOwnerID(), 00001, "12345678");
 		System.out.println("1 Account created");
+		
+		logger.info("Checking Account created successfully");
 
 		// creating an instance of Saving Account
 		System.out.println("Creating Account2...");
 		AccountS2023Team1 account2 = new SavingsS2023Team1(p3.getOwnerID(), 00002, "45678901");
 		System.out.println("2 Accounts created");
+		
+		logger.info("Saving Account created successfully");
 
 		// creating an instance of Saving Account
 		System.out.println("Creating Account3...");
 		AccountS2023Team1 account3 = new SavingsS2023Team1(p1.getOwnerID(), 00003, "45688999");
 		System.out.println("3 Accounts created");
+		
+		logger.info("Saving Account created successfully");
 		
 		// creating an instance of Saving Account
 		System.out.println("");
@@ -63,6 +75,8 @@ public class TestBankingApp {
 				"---------------------------------**DEPOSIT TEST**-----------------------------------------------");
 		System.out.println("");
 		System.out.println("");
+		
+		
 
 		// ******** TEST: operation on the accounts
 
@@ -78,6 +92,7 @@ public class TestBankingApp {
 			System.out.println("");
 
 		} catch (InvalidDepositAmountException ex) {
+			logger.error("Deposit failed");
 			System.out.println(ex);
 		}
 
@@ -113,6 +128,7 @@ public class TestBankingApp {
 		}
 
 		catch (InsufficientFundsException ex) {
+			logger.error("Withdraw failed");
 			System.out.println(ex);
 		}
 

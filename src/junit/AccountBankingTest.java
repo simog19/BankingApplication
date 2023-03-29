@@ -1,14 +1,14 @@
 package junit;
 
-import banksystem.*;
-import exceptions.InsufficientFundsException;
-import exceptions.InvalidDepositAmountException;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.security.InvalidAlgorithmParameterException;
 
 import org.junit.jupiter.api.Test;
+
+import banksystem.*;
+import exceptions.InsufficientFundsException;
+import exceptions.InvalidDepositAmountException;
 
 public class AccountBankingTest {
 

@@ -87,6 +87,8 @@ public abstract class AccountS2023Team1 {
 			System.out.println("Account n." + this.getAccountNumber() + " - Deposit ongoing... Current Balance: $"
 					+ this.getBalance() + " - Amount to deposit: $" + amount);
 
+			//NUMM00-J. Failing in checking ranges during addition or subtraction could result in an integer overflow/underlfow. It can lead to a change of a program flow and potentially to RCE.
+			//The severity is medium in java, and it's quite unlikely.
 			
 			double newBalance = this.getBalance() - amount;
 			

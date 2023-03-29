@@ -2,10 +2,17 @@ package banksystem;
 
 import exceptions.InsufficientFundsException;
 
+
 /**
- * Default constructor
+ * 
+ * This class defines a typical saving bank account
+ * 
+ * @author Matthew Steckman, Simone Galota, Timothy Barefield, 
+ * @version 1.0
+ * @since 2023-02-01
  * 
  * */
+
 public class SavingsS2023Team1 extends AccountS2023Team1 {
 	private String type;
 
