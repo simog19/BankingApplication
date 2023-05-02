@@ -2,7 +2,8 @@ package banksystem;
 
 import java.security.InvalidAlgorithmParameterException;
 
-import org.apache.logging.log4j.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import exceptions.InsufficientFundsException;
 import exceptions.InvalidDepositAmountException;
@@ -131,6 +132,33 @@ public class TestBankingApp {
 			logger.error("Withdraw failed");
 			System.out.println(ex);
 		}
+		
+		//********************************************************encryption
+		
+    	String plaintext1 = account1.toString();
+    	String plaintext2 = account2.toString();
+    	String plaintext3 = account3.toString();
+    	
+        String phonykey = "phonykeyAbc123456abc!!!"; 
+        System.out.println("");
+        System.out.println("");
+        System.out.println("-------------------------------------**Encryption TEST**------------------------------------------");
+        System.out.println("");
+        System.out.println("input text : " + plaintext1);
+        System.out.println("secret : " + phonykey);
+        
+        String encryptedString1 = Encryption.encrypt(plaintext1, phonykey);
+        String encryptedString2 = Encryption.encrypt(plaintext2, phonykey);
+        String encryptedString3 = Encryption.encrypt(plaintext3, phonykey);
+        
+        // encryption pass       
+        System.out.println("cipher text: " + encryptedString1);
+        
+        //String decryptedString = Encryption.decrypt(encryptedString, phonykey);
+        
+        // decryption phase, if you need to work on them in plaintext
+        //System.out.println("plain text : " + decryptedString );
+        
 
 	}
 }
